@@ -46,6 +46,10 @@ const routeMap = {
     name: 'Polyline',
     component: require('./components/withPolylines').default
   },
+  circle: {
+    name: 'Circle',
+    component: require('./components/withCircles').default
+  },
   onResizeEvent: {
     name: 'Custom events',
     component: require('./components/resizeEvent').default

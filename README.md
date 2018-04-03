@@ -342,6 +342,36 @@ render: function() {
 
 The `<Polyline />` component listens to `onClick`, `onMouseover` and `onMouseout` events.
 
+### Circle
+
+To place a circle on the Map, set `<Circle />` as child of Map component.
+
+```javascript
+render: function() {
+  const center = { lat: 37.784915, lng: -122.402687 };
+  return(
+    <Map google={this.props.google}
+        style={{width: '100%', height: '100%', position: 'relative'}}
+        className={'map'}
+        zoom={14}>
+        <Circle
+            center={center}
+            strokeColor="#0000FF"
+            strokeOpacity={0.8}
+            strokeWeight={2}
+            fillColor="#0000FF"
+            fillOpacity={0.2}
+            radius={200}
+        />
+    </Map>
+  )
+}
+```
+
+#### Events
+
+The `<Circle />` component listens to `onClick`, `onMouseover` and `onMouseout` events.
+
 ### InfoWindow
 
 The `<InfoWindow />` component included in this library is gives us the ability to pop up a "more info" window on our Google map.
@@ -456,6 +486,8 @@ make dev
 ```
 
 The Google Map React component library uses React and the Google API to give easy access to the Google Maps library.
+
+If you add a new component, be sure to add it as an export in `index.js` and run `npm run prepublish`.
 
 ___
 
