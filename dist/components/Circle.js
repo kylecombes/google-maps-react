@@ -135,7 +135,7 @@
     }, {
       key: 'componentDidUpdate',
       value: function componentDidUpdate(prevProps) {
-        var propsToCheckForChanges = ['map', 'center', 'strokeColor', 'strokeOpacity', 'strokeWeight', 'fillColor', 'fillOpacity', 'radius'];
+        var propsToCheckForChanges = ['map', 'center', 'strokeColor', 'strokeOpacity', 'strokeWeight', 'fillColor', 'fillOpacity', 'radius', 'name'];
         var propChanged = false;
         for (var i in propsToCheckForChanges) {
           var propName = propsToCheckForChanges[i];

@@ -33,6 +33,7 @@ export class Circle extends React.Component {
       'fillColor',
       'fillOpacity',
       'radius',
+      'name',
     ];
     let propChanged = false;
     for (let i in propsToCheckForChanges) {
