@@ -24,7 +24,26 @@ export class Circle extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.map !== prevProps.map) {
+    const propsToCheckForChanges = [
+      'map',
+      'center',
+      'strokeColor',
+      'strokeOpacity',
+      'strokeWeight',
+      'fillColor',
+      'fillOpacity',
+      'radius',
+    ];
+    let propChanged = false;
+    for (let i in propsToCheckForChanges) {
+      const propName = propsToCheckForChanges[i];
+      if ((Object.hasOwnProperty.call(this.props, propName) || Object.hasOwnProperty.call(prevProps, propName)) &&
+        (this.props[propName] !== prevProps[propName])) {
+        propChanged = true;
+        break;
+      }
+    }
+    if (propChanged) {
       if (this.circle) {
         this.circle.setMap(null);
       }

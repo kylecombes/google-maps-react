@@ -105,4 +105,6 @@ config.postcss = [].concat([
   require('cssnano')({})
 ])
 
+config.devtool = 'source-map';
+
 module.exports = config;

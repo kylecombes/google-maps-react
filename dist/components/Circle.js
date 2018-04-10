@@ -135,7 +135,16 @@
     }, {
       key: 'componentDidUpdate',
       value: function componentDidUpdate(prevProps) {
-        if (this.props.map !== prevProps.map) {
+        var propsToCheckForChanges = ['map', 'center', 'strokeColor', 'strokeOpacity', 'strokeWeight', 'fillColor', 'fillOpacity', 'radius'];
+        var propChanged = false;
+        for (var i in propsToCheckForChanges) {
+          var propName = propsToCheckForChanges[i];
+          if ((Object.hasOwnProperty.call(this.props, propName) || Object.hasOwnProperty.call(prevProps, propName)) && this.props[propName] !== prevProps[propName]) {
+            propChanged = true;
+            break;
+          }
+        }
+        if (propChanged) {
           if (this.circle) {
             this.circle.setMap(null);
           }
